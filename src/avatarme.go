@@ -3,11 +3,10 @@ package main
 import (
 	"crypto/sha256"
 	"fmt"
-	"os"
-	//"strings"
 	"image"
 	"image/color"
 	"image/png"
+	"os"
 )
 
 const (

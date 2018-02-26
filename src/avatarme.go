@@ -27,10 +27,28 @@ func main() {
 		for j := 0; j < loop; j++ {
 			wStart := i * bLen
 			hStart := j * bLen
+			v := bArray[(i*loop+j)%bLen]
+			picker := (i*loop + j) % 3
+			var r, g, b uint8
+			if picker == 0 {
+				r = 255
+				g = v
+				b = 0
+			}
+			if picker == 1 {
+				r = 0
+				g = 255
+				b = v
+			}
+			if picker == 2 {
+				r = v
+				g = 0
+				b = 255
+			}
+
 			for m := 0; m < bLen; m++ {
 				for n := 0; n < bLen; n++ {
-					v := bArray[(i*loop+j)%32]
-					img.Set(wStart+m, hStart+n, color.NRGBA{v, v, v, 255})
+					img.Set(wStart+m, hStart+n, color.RGBA{r, g, b, 255})
 				}
 			}
 		}

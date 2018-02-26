@@ -1,4 +1,4 @@
 # Go BootCamp
 
 ## avatarme
-go run src/avatarme.go <email>
+go run src/avatarme.go [email]
